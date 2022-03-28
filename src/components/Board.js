@@ -38,7 +38,7 @@ function Board() {
       <div>
         Board
         <FilterBar gender={gender} setGender={setGender} race={race} setRace={setRace} ethnicity={ethnicity} setEthnicity={setEthnicity} ageMax={ageMax} setAgeMax={setAgeMax} ageMin={ageMin} setAgeMin={setAgeMin} isDeath={isDeath} setIsDeath={setIsDeath} />
-        <Graph />
+        <Graph gender={gender} ethnicity={ethnicity} race={race}/>
         <Table data={data}/>
       </div>
     );
