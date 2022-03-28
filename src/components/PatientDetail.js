@@ -17,12 +17,17 @@ const PatientDetail = ({id}) =>{
     return(
         <div>
             <h3>환자{id} 상세정보</h3>
-            {conditions.map(c => {
-                return(
-                    <p>{c}</p>
-                )
-            })}
-            <p>{visitNum}</p>
+            <div>
+                <h5>진단 정보</h5>
+                {conditions.map(c => {
+                    return(
+                        <p>{c}</p>
+                    )
+                })}
+            </div>
+            <div>
+                <h5>전체 방문 수 : {visitNum}</h5>
+            </div>
         </div>
     )
 }

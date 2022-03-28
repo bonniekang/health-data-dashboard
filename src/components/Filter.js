@@ -3,7 +3,7 @@ import React from 'react';
 const Filter = ({list, value, settingData}) => {
     return(
         <div>
-            <select value={value} onChange={e=>settingData(e.target.value)}>
+            <select className="filter" value={value} onChange={e=>settingData(e.target.value)}>
                 {
                     list.map(l => {
                         return(

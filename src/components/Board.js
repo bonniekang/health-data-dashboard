@@ -36,7 +36,7 @@ function Board() {
     console.log(data)
     return (
       <div>
-        Board
+        <h1>Dash Board</h1>
         <FilterBar gender={gender} setGender={setGender} race={race} setRace={setRace} ethnicity={ethnicity} setEthnicity={setEthnicity} ageMax={ageMax} setAgeMax={setAgeMax} ageMin={ageMin} setAgeMin={setAgeMin} isDeath={isDeath} setIsDeath={setIsDeath} />
         <Graph gender={gender} ethnicity={ethnicity} race={race}/>
         <Table data={data}/>

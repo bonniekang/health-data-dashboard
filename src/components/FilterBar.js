@@ -34,17 +34,23 @@ const FilterBar = ({gender, setGender, race, setRace, ethnicity, setEthnicity, a
     console.log(genderList, raceList, ethnicityList)
 
     return (
-      <div>
-        <Filter value={gender} settingData={setGender} list={genderList}/>
-        <Filter value={race} settingData={setRace} list={raceList}/>
-        <Filter value={ethnicity} settingData={setEthnicity} list={ethnicityList}/>
-        <Filter value={isDeath} settingData={setIsDeath} list={isDeathList}/>
-        <div>
+      <div className="filter-box">
+        <span>성별</span>
+            <Filter value={gender} settingData={setGender} list={genderList}/>
+        <span>인종</span>
+            <Filter value={race} settingData={setRace} list={raceList}/>
+        <span>민족</span> 
+            <Filter value={ethnicity} settingData={setEthnicity} list={ethnicityList}/>
+        <span>사망 여부</span>
+            <Filter value={isDeath} settingData={setIsDeath} list={isDeathList}/>
+        <div className="filter-box">
             <form onSubmit={setAgeMin(ageMin)}>
-                <input value={ageMin} onChange={e=>setAgeMin(e.target.value)}/>
+                <span>나이 최소값</span>
+                <input className="filter" value={ageMin} onChange={e=>setAgeMin(e.target.value)}/>
             </form>
             <form onSubmit={setAgeMax(ageMax)}>
-                <input value={ageMax} onChange={e=>setAgeMax(e.target.value)}/>
+                <span>나이 최소값</span>  
+                <input  className="filter" value={ageMax} onChange={e=>setAgeMax(e.target.value)}/>
             </form>
         </div>
       </div>

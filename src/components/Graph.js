@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios'
 
+
 const PieChart = require("react-chartjs").Pie;
-
-
 
 const Graph = ({gender, race, ethnicity}) => {
     const [stats, setStats] = useState([])
@@ -27,8 +26,8 @@ const Graph = ({gender, race, ethnicity}) => {
         stats.forEach(s => {
             s.gender === 'F' ? sum1 += s.count : sum2 += s.count
         })
-        if(gender === 'M') sum2 = 0
-        if(gender === 'F') sum1 = 0
+        if(gender === 'M') sum1 = 0
+        if(gender === 'F') sum2 = 0
         let female = {value : sum1, color:"#F7464A",
         highlight: "#FF5A5E",
         label: "여성"}
@@ -36,7 +35,7 @@ const Graph = ({gender, race, ethnicity}) => {
         highlight: "#FFC870",
         label: "남성"}
         setGenderStats([female, male])
-    }, [gender])
+    }, [stats, gender])
 
     useEffect(() => {
         let sum1 = 0;
@@ -99,7 +98,7 @@ const Graph = ({gender, race, ethnicity}) => {
         highlight: "#616774",
         label: "asian"}
         setRaceStats([other, native, black, white, asian])
-    }, [race])
+    }, [stats, race])
 
     useEffect(() => {
         let sum1 = 0;
@@ -118,12 +117,12 @@ const Graph = ({gender, race, ethnicity}) => {
         highlight: "#FFC870",
         label: "nonhispanic"}
         setEthnicityStats([hispanic, non])
-    }, [ethnicity])
+    }, [stats, ethnicity])
 
 
     
     return (
-      <div>
+      <div className="graph-box">
           <div>
             <p>성별 환자 수</p>
             <PieChart data={genderStats} />
